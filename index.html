@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random image</title>
+</head>
+
+<body>
+
+    <div class="main">
+        <img id="mittBilde" onclick="visBilde('mittBilde','250px','250px')" />
+        <img id="mittBilde2" onclick="visBilde('mittBilde2','250px','250px')" />
+        <img id="mittBilde3" onclick="visBilde('mittBilde3','250px','250px')" />
+    </div>
+
+    <script>
+
+        function visBilde(mittBilde, height, width) {
+            let bilde = randomBilde();
+            document.getElementById(mittBilde).src = bilde;
+            document.getElementById(mittBilde).style.height = height;
+            document.getElementById(mittBilde).style.width = width;
+        }
+
+        function randomBilde() {
+            let randomNumber = Math.floor(Math.random() * 3) + 1;
+            if (randomNumber === 1) {
+                return 'ape.jpg';
+            }
+            else if (randomNumber === 2) {
+                return 'tiger.jpg';
+            }
+            else {
+                return 'ugle.jpg';
+            }
+
+        }
+
+    </script>
+    <style>
+        body {
+            background-color: blanchedalmond;
+        }
+
+        .main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+        }
+
+        #mittBilde,
+        #mittBilde2,
+        #mittBilde3 {
+            background-color: lightgoldenrodyellow;
+            border: 1px solid black;
+            height: 250px;
+            width: 250px;
+        }
+    </style>
+</body>
+
+</html>
